@@ -118,7 +118,7 @@
     </div>
     <!-- ______________CELEBRATION OF _________END -->
 <!-- ______________EVENT AGENDA_______start -->
-<div class="container mt-5">
+<!-- <div class="container mt-5">
       <div class="row mt-5">
         <div class="col box m-auto d-flex justify-content-center">
           <h1 class="heading mb-4">
@@ -129,7 +129,7 @@
       <div class="row ">
        <events></events>
       </div>
-    </div>
+    </div> -->
 
     <!-- ________EVENT AGENDA END________ -->
 

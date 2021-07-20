@@ -20,9 +20,9 @@
       <li class="nav-item ml-lg-3">
         <a class="nav-link" href="#">About</a>
       </li>
-       <li class="nav-item ml-lg-3">
+       <!-- <li class="nav-item ml-lg-3">
         <a class="nav-link" href="#">Agenda</a>
-      </li>
+      </li> -->
        <li class="nav-item ml-lg-3">
         <a class="nav-link ml-lg-3" href="#">Speaker</a>
       </li>

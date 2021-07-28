@@ -1,5 +1,4 @@
 # io-extended
-
 ## Project setup
 ```
 npm install

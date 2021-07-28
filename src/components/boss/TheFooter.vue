@@ -13,9 +13,9 @@
             <div id="logo-name" class="col-6"> <span>Extended</span> Universal</div>
         </div>
         <div class="col-lg">
-             <button class="bg-light register-btn p-2  outline-none border-0">
+             <a href="https://forms.gle/PCJhTisg1p3S2Mdb6"><button class="bg-light register-btn p-2  outline-none border-0">
             Register Now
-          </button>
+          </button></a>
         </div>
       </div>
     </div>

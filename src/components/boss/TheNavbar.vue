@@ -20,9 +20,9 @@
       <li class="nav-item ml-lg-3">
         <a class="nav-link" href="https://io-extended-universal.netlify.app/#about">About</a>
       </li>
-       <!-- <li class="nav-item ml-lg-3">
-        <a class="nav-link" href="#">Agenda</a>
-      </li> -->
+       <li class="nav-item ml-lg-3">
+        <a class="nav-link" href="#"> <router-link to="/event">Event Agenda</router-link></a>
+      </li>
        <li class="nav-item ml-lg-3">
         <a class="nav-link ml-lg-3" href="https://io-extended-universal.netlify.app/#speaker">Speaker</a>
       </li>

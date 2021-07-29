@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Team from "../views/Team.vue";
+import Team from "../views/Team.vue";     
+import Event from "../views/Events.vue";      
+import SpeakersDetail from "../views/SpeakersDetail.vue";      
 
 
 const routes = [
@@ -13,6 +15,16 @@ const routes = [
     path: "/team",
     name: "Team",
     component: Team,
+  },
+  {
+    path: "/event",
+    name: "Event",
+    component: Event,
+  },
+  {
+    path: "/speaker-detail/:id",
+    name: "SpeakersDetail",
+    component: SpeakersDetail,
   },
 ];
 

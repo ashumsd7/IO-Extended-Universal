@@ -1,7 +1,8 @@
 const partnersCommunity = [
   {
     id: 1,
-    img: "https://i.ibb.co/52tq2BC/gdgchan.png",
+    img:
+      "https://user-images.githubusercontent.com/71369943/127439008-ba092a1c-4e5d-4de0-8e09-19912653ed0a.png",
     name: "",
     website: "https://gdg.community.dev/gdg-chandigarh",
   },
@@ -84,10 +85,6 @@ const partnersCommunity = [
     name: "",
     website: "https://twitter.com/basecampXD",
   },
-  
-  
-  
-
 ];
 
 export default partnersCommunity;

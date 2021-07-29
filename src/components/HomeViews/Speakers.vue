@@ -9,7 +9,7 @@
 </div>
 
     <div v-else class="row d-flex justify-content-center align-items-center">
-      <team-member
+      <SpeakerMember
         v-for="data in getSpeakersData"
         :key="data.id"
         :twitter="data.twitter"
@@ -18,22 +18,30 @@
         :img="data.profilePicture"
         :name="data.fullName"
         :position="data.tagLine"
+        :id="data.id"
+
+        @click="showDetails(data.id)"
       />
     </div>
   </div>
 </template>
 
 <script>
-import TeamMember from "../reusable/TeamMember.vue";
+import SpeakerMember from "../reusable/SpeakerMember.vue";
 // import speakerData from "../../data/speakerData";
 export default {
   components: {
-    TeamMember,
+    SpeakerMember,
   },
   data() {
     return {
       // speakers: this.getSpeakersData,
     };
+  },
+  methods: {
+    showDetails(id){
+     this.$router.push('/speaker-detail'+'/'+id)
+    }
   },
 
   computed:{
@@ -41,9 +49,7 @@ export default {
       return this.$store.getters.getSpeakersWall
     }
   },
-  created() {
-    this.$store.dispatch('getSpeakersListAction')
-  },
+  
 };
 </script>
 

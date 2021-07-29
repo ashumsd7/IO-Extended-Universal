@@ -1,15 +1,16 @@
 <template>
-
-<div class="container-fluid team-page">
+   <div class="container-fluid team-page">
     <div class="container">
       <div class="row">
         <div class="col team-page_heading text-center p-3">
-          <h2 class="p-2 fw-bold">IO Extended Event Timeline</h2>
+          <h2 class="p-2 fw-bold">{{individualSpeaker[0].speakersName}}</h2>
+        
         </div>
+        
       </div>
     </div>
   </div>
-
+  <button  class="btn btn-warning event-btn"> <router-link to="/event"> See full event timeline</router-link> </button>
  <div class="container">
   
    <div v-if="loading" class="laoding text-center">
@@ -17,9 +18,9 @@
  
 </div>
    </div>
-
+  
    <div v-else class="row d-flex justify-content-around"> 
-    <div class="card col-lg-4 col-md-6 px-2   pb-4 mx-1 mt-5" v-for="data in getEventTImeLine" :key="data.eventId">
+    <div class="card col-lg-4 col-md-6 px-2   pb-4 mx-1 mt-5" v-for="data in individualSpeaker" :key="data.eventId">
         <div class="row"> <img class="img-fluid speaker-img mt-2 m-auto"  :src="data.profilePicture">
             <h5 class=" ml-2 mt-1 speaker-name text-center">{{data.speakersName}}</h5>
             <div  class="text-center"><span class="text-success text-center">Starts at {{data.slotStart}}</span></div>
@@ -46,34 +47,39 @@
 </template>
 
 <script>
-  export default {
-    computed:{
+    export default {
+         computed:{
        getEventTImeLine(){
       return this.$store.getters.getEventTimeline
+    },
+    getRoute(){
+        return this.$route.params.id
     }
     },
     data() {
-      return {
-        loading:true,
-        url:'https://www.youtube.com/watch?v=_oGN2TcOJ50'
-       
-      }
-    },
-    created() {
-       
-      // this.$store.dispatch("getTimeSlotsWithDetailsAction");
-     
-      setTimeout(() => {
-        this.loading=false
-      }, 3000);
+        return {
+            individualSpeaker:[],
+            loading:false,
+            url:'https://www.youtube.com/watch?v=_oGN2TcOJ50'
+        }
     },
 
-  
-  }
+    created() {
+        // console.log(this.getEventTImeLine);
+        // console.log(this.$route.params.id);
+        let param= this.$route.params.id;
+      var results = this.getEventTImeLine.filter(function (entry) { return entry.speakersId == param; });
+    //   console.log(results);
+      this.individualSpeaker=results;
+      console.log("this is filter");
+      console.log(this.individualSpeaker);
+    },
+    }
+
+    
 </script>
 
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+<style  scoped>
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@500&display=swap');
 .card {
     max-width: 400px;
@@ -195,5 +201,15 @@ font-size: 1.6rem;
 span a{
   text-decoration: none;
   color: white;
+}
+.event-btn{
+max-width: 300px;
+margin-top: 20px;
+}
+.event-btn a{
+text-decoration: none;
+text-transform: uppercase;
+color: black;
+font-weight: bolder;
 }
 </style>

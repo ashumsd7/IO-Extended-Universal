@@ -15,7 +15,11 @@ export default {
   components:{
     TheNavBar,
     TheFooter
-  }
+  },
+  created() {
+    this.$store.dispatch('getSpeakersListAction')
+    
+  },
 }
 </script>
 <style>
